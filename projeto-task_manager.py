@@ -1,5 +1,7 @@
 print('Gerenciador de Tarefas\n')
 
+tarefas = []
+
 while True:
     print('1 - Adicionar tarefa.')
     print('2 - Ver tarefas.')
@@ -8,9 +10,15 @@ while True:
     opcao = input('Escolha: ')
 
     if opcao == '1':
-        print('Você escolheu adicionar.')
+        tarefa = input('Digite a tarefa: ')
+        tarefas.append(tarefa)
     elif opcao == '2':
-        print('Você escolheu ver.')
+        numero = 1
+        if len(tarefas) == 0:
+            print('Você não adicionou nenhuma tarefa.')
+        for tarefa in tarefas:
+            print(f'{numero} - {tarefa}')
+            numero = numero + 1
     elif opcao == '3':
         print('Você escolheu remover.')
     elif opcao == '4':
