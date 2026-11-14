@@ -20,7 +20,20 @@ while True:
             print(f'{numero} - {tarefa}')
             numero = numero + 1
     elif opcao == '3':
-        print('Você escolheu remover.')
+        numero = 1
+        if len(tarefas) == 0:
+            print('Não há tarefas para serem removidas.')
+        else:           
+            for tarefa in tarefas:
+                print(f'{numero} - {tarefa}')
+                numero = numero + 1
+            opcao_remov = int(input('Qual o número da tarefa a ser removida? '))
+            if 1 <= opcao_remov <= len(tarefas):
+                indice = opcao_remov - 1
+                removida = tarefas.pop(indice)
+                print(f'Você removeu: {removida}')
+            else:
+                print('Opção inválida.')
     elif opcao == '4':
         print('Até logo!')
         break
